@@ -1,8 +1,8 @@
 class Process:
-    pass
+    def __init__(self):
+        pass
 
 
 class Resource:
-    pass
-
-
+    def __init__(self, max_r):
+        self.max = max_r
