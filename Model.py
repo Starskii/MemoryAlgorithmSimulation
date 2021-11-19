@@ -40,6 +40,7 @@ def request_resource(p_index, r_index, amt):
         else:
             process.waiting_res[r_index] += 1
             wait_queue.append((p_index, r_index))
+            print("Process {0} blocked, waiting on resource {1}".format(p_index, r_index))
 
 
 def release_resource(p_index, r_index, amt):
@@ -58,6 +59,7 @@ def release_resource(p_index, r_index, amt):
                     processes[pro_index].holding_res[res_index] += 1
                     resources[res_index].cur_r -= 1
                     wait_queue.pop(y)
+                    print("Process {0} receives resource {1}".format(pro_index, res_index))
                     y -= 1
                 y += 1
 
